@@ -7,6 +7,7 @@ export default function HomePage() {
   return (
     <div className="container">
       <style jsx>{`
+        
         .container {
           max-width: 1000px;
           margin: 0 auto;
@@ -85,6 +86,11 @@ export default function HomePage() {
           background-color: #0069d9;
         }
 
+          .btns{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+          }
         footer {
           text-align: center;
           color: #777;
@@ -101,35 +107,35 @@ export default function HomePage() {
             font-size: 1rem;
           }
 
+          .btns{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+          }
+
           .button {
             width: 100%;
             display: block;
             text-align: center;
           }
-          .btns{
-            display:flex;
-            align-items: center;
-            justify-content: center;
-          }
         }
       `}</style>
 
       <header>
-        <h1 className="title">طرح مهارت‌آموزی سپاه ثارالله</h1>
+        <h1 className="title">قرارگاه مهارت‌آموزی سپاه ثارالله</h1>
         <p className="description">
           این طرح با هدف توانمندسازی سربازان در دوران خدمت طراحی شده است تا با کسب مهارت‌های فنی و کاربردی، مسیر موفقیت شغلی پس از خدمت برای آنان هموار شود. با بهره‌گیری از اساتید مجرب، تجهیزات تخصصی، و آموزش‌های هدفمند، این طرح فرصت ارزشمندی برای ورود به بازار کار و ارتقای سطح دانش فنی ایجاد می‌کند.
         </p>
-      </header>
       <div className='btns'>
-
       <Link href="/needs-assessment-form">
-        <p className="button">تکمیل فرم نیازسنجی مهارتی</p>
+        <p className="button"> تکمیل فرم نیازسنجی و مشاوره شغلی</p>
       </Link>
-
       <Link href="/certificate">
         <p className="button secondary">دریافت گواهینامه فنی حرفه‌ای</p>
       </Link>
       </div>
+      </header>
 
       <section className="grid">
         <div className="card">
@@ -153,17 +159,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <Link href="/needs-assessment-form" className="button">
-        تکمیل فرم نیازسنجی مهارتی
-      </Link>
 
-      <Link href="/certificate" className="button secondary">
-        دریافت گواهینامه فنی حرفه‌ای
-      </Link>
-
-      <footer>
-        طراحی شده برای طرح مهارت‌آموزی سپاه ثارالله استان کرمان — تابستان ۱۴۰۴
-      </footer>
     </div>
   );
 }

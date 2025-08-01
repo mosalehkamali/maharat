@@ -262,9 +262,9 @@ export default function HomePage() {
           />
         ))}
         <div className="slider-title-container">
-          <img src="/logo1.png" alt="logo1" />
-          <div className="slider-title">قرارگاه مهارت‌آموزی سپاه ثارالله استان کرمان</div>
           <img src="/logo2.png" alt="logo2" />
+          <div className="slider-title">قرارگاه مهارت‌آموزی سپاه ثارالله استان کرمان</div>
+          <img src="/logo1.png" alt="logo1" />
         </div>
       </div>
 
@@ -285,19 +285,19 @@ export default function HomePage() {
               <span>دریافت گواهی مهارتی</span>
             </div>
           </Link>
-          <Link href="/exam/register" passHref>
+          <Link href="/job-agency" passHref>
             <div className="service-button" style={{ backgroundColor: '#ffc107', color:'#222' }}>
               <FaClipboardList size={30} />
-              <span>ثبت‌نام در آزمون</span>
+              <span> ثبت نام بنگاه کاریابی</span>
             </div>
           </Link>
-          <Link href="/exam/tracking" passHref>
+          <Link href="https://azmoon.portaltvto.com/result/result/index/1/80" passHref>
             <div className="service-button" style={{ backgroundColor: '#17a2b8' }}>
               <FaTools size={30} />
               <span>پیگیری نمرات و کارت ورود</span>
             </div>
           </Link>
-          <Link href="/skills-competition" passHref>
+          <Link href="/competition" passHref>
             <div className="service-button" style={{ backgroundColor: '#6f42c1' }}>
               <FaTrophy size={30} />
               <span>ثبت‌نام در مسابقات مهارتی</span>

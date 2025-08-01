@@ -12,29 +12,55 @@ export default function NeedsAssessmentForm() {
 
   const [result, setResult] = useState("");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-  
+  async function callTalkBot(message) {
     try {
       const res = await fetch("/api/analyze", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(message),
       });
   
       const data = await res.json();
       if (res.ok) {
-        console.log("Analysis result:", data.analysis);
-        alert("نتیجه تحلیل:\n" + data.analysis);
+        return data.analysis;
       } else {
-        alert("خطا در دریافت تحلیل");
+        throw new Error("تحلیل از سمت چت‌بات دریافت نشد.");
       }
     } catch (err) {
-      alert("خطا در ارسال داده‌ها");
+      console.error("Talkbot error:", err);
+      return "خطایی در ارتباط با چت‌بات رخ داد.";
+    }
+  }
+  
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  
+    try {
+      const summary = `
+        اطلاعات نیازسنجی:
+        - گواهی فنی: ${formData.hasCertificate}
+        - هدف: ${formData.goal}
+        - روش ترجیحی آموزش: ${formData.method}
+        - تمایل به آزمون: ${formData.examConsent}
+        - مشاوره قبلی: ${formData.hasCounseling}
+        - مدرک تحصیلی: ${formData.educational}
+        - سابقه کاری: ${formData.workExperience}
+        - مهارت‌ها: ${formData.currentSkills}
+        - علاقه‌مندی: ${formData.interests}
+        - توضیحات: ${formData.feedback}
+      `;
+  
+      const analysis = await callTalkBot(summary);
+      setResult(analysis);
+    } catch (err) {
+      alert("خطا در ارسال یا دریافت تحلیل");
       console.error(err);
     }
   };
+  
   
 
 

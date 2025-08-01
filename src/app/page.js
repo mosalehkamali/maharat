@@ -8,7 +8,7 @@ import dynamic from 'next/dynamic';
 
 const MotionDiv = dynamic(() => import('framer-motion').then(mod => mod.motion.div), { ssr: false });
 
-const sliderImages = ['/slider-image-1.jpg', '/slider-image-2.jpg', '/slider-image-3.jpg'];
+const sliderImages = ['/slider-image-1.jpg', '/slider-image-2.jpg', '/slider-image-3.jpg', '/slider-image-4.jpg'];
 
 export default function HomePage() {
   const [currentIndex, setCurrentIndex] = useState(0);

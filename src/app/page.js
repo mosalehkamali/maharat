@@ -72,6 +72,7 @@ export default function HomePage() {
           transform: translate(-50%, -50%);
           z-index: 2;
           display: flex;
+          flex-direction: column;
           align-items: center;
           justify-content: center;
           gap: 1.5rem;
@@ -211,8 +212,8 @@ export default function HomePage() {
           }
 
           .slider-title-container img{
-            width: 60px;
-            height: 60px;
+            width: 7rem;
+            height: 7rem;
           }
 
           .slider-title-container {
@@ -262,9 +263,8 @@ export default function HomePage() {
           />
         ))}
         <div className="slider-title-container">
-          <img src="/logo2.png" alt="logo2" />
-          <div className="slider-title">مرکز مهارت آموزی شهید باقری</div>
           <img src="/logo1.png" alt="logo1" />
+          <div className="slider-title">مرکز مهارت آموزی شهید باقری</div>
         </div>
       </div>
 

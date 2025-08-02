@@ -39,7 +39,7 @@ export default function CertificateViewer() {
   return (
     <div className="container">
         <div className="title"></div>
-      <h1>مشاهده مدارک مهارت‌آموزی سپاه ثارالله</h1>
+      <h1>مشاهده مدارک مهارت‌آموزی مرکز شهید باقری</h1>
       <p>جهت جستجو کد ملی را وارد نموده و سپس بر روی دکمه جستجو کلیک نمایید</p>
       <form onSubmit={handleSubmit} className="form">
         <label htmlFor="nationalCode">کد ملی</label>
